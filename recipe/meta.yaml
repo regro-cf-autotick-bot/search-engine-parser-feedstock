@@ -1,5 +1,5 @@
 {% set name = "search-engine-parser" %}
-{% set version = "0.6.7" %}
+{% set version = "0.6.8" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/search-engine-parser-{{ version }}.tar.gz
-  sha256: 643a0d6834b4db63957eac0c3d650281bba77b7e7771fcd34843ccea548af996
+  sha256: 26a28b9dee1ccf5f5c228dce697cc3c0dbe38cd68062c72d68da9a9ef434838f
 
 build:
   number: 0
