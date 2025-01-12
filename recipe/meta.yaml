@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/search-engine-parser-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/search-engine-parser-{{ version }}.tar.gz
   sha256: 26a28b9dee1ccf5f5c228dce697cc3c0dbe38cd68062c72d68da9a9ef434838f
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - pysearch=search_engine_parser.core.cli:runner
@@ -20,13 +20,13 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.5
+    - python {{ python_min }}
   run:
     - aiohttp ==3.7.4
     - beautifulsoup4 ==4.9.1
     - fake-useragent ==0.1.11
     - lxml ==4.6.5
-    - python >=3.5
+    - python >={{ python_min }}
     - blessed
 
 test:
@@ -38,6 +38,7 @@ test:
     - pysearch --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/bisoncorps/search-engine-parser
